@@ -33,7 +33,7 @@ export default function about() {
       </main>
 
       <footer className={styles.footer}>
-        <div className="pa4">
+        <div  className="white-50">
           <Footer />
         </div>
       </footer>

@@ -36,7 +36,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <div className="">
+        <div className="white-50">
           <Footer />
         </div>
       </footer>
