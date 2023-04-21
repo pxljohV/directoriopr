@@ -25,7 +25,7 @@ export default function List() {
             {
                 data.map((i, index) => {
                     return (
-                        <div key={index} className="w-100-ns  pa4-ns bt b--white-30 center mb3">
+                        <div key={index} className="w-100-ns  pa4-ns  b--white-30 center mb3">
 
                             <div className=" pa  bg-white-10 ">
                                 <div className="bg-white " style={{ width: '160px', height: '160px' }}>
@@ -36,7 +36,7 @@ export default function List() {
 
                             <div className="w-100">
                                 <div className="flex justify-between items-center relative w-80-ns w-80-m pa2 ">
-                                    <h1 className="name b f2  f3-m f2-ns tl  ma0">{i.name}</h1>
+                                    <h1 className="name b f2  f3-m f2-ns tl  ma0 white">{i.name}</h1>
                                 </div>
                                 <div className="w-100 flex items-center">
                                     < a href={`tel:${i.tel}`} className="w-50">
@@ -47,7 +47,7 @@ export default function List() {
                                 </div>
 
                                 
-                                <p className="white-90 ma0 tl pv2 bb  pa2 i bt" style={{wordBreak: 'break-all'}}>{i.desc}</p>
+                                <p className="white-90 ma0 tl pv2 bb  pa2 i " style={{wordBreak: 'break-all'}}>{i.desc}</p>
                             </div>
                         </div>
                     )
