@@ -5,7 +5,7 @@ import About from "../Components/about"
 import tachyons from "tachyons/css/tachyons.css"
 import styles from "../styles/Home.module.css"
 import logo from "../Components/assets/logo.svg"
-export default function about() {
+export default function about(){
   return (
     <div >
       <Head>
