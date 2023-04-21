@@ -5,7 +5,7 @@ export default function handler(req, res) {
         client: process.env.SERV,
         connection: {
             host: process.env.HOST,
-            port: process.env.PORT,
+            port: process.env.DBPORT,
             user: process.env.USER,
             password: process.env.PW,
             database: process.env.DB
