@@ -1,5 +1,7 @@
 import React from "react";
 import Router from 'next/router'
+import Link from 'next/link'
+
 let step1 = React.createRef()
 let step2 = React.createRef()
 let inputEmail = React.createRef()
@@ -56,8 +58,8 @@ async function handler2(e) {
 
 export default function Join() {
     return (
-        <div className="vh-75 w-100 flex items-center " >
-            <form id="form" className=" flex w-100">
+        <div className="vh-75 w-100 flex items-center flex-wrap" >
+            <form id="form" className=" flex w-100 flex-wrap">
                 <div className=" w-100 " ref={step1}>
                     <p className="email center  mw5  pa2  tc" id="email">¿Cual es tu correo electrónico?</p>
                     <div>
@@ -71,7 +73,9 @@ export default function Join() {
                     <input type="text" name="email" placeholder="_ _ _ _ _ _" className="pa2 bg-white-10 b--black-20 " ref={inputNum} />
                     <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler2} />
                 </div>
+                <Link href="/" className="light-purple underline ma0 w-100 mt5">←regresar</Link>
             </form>
+            
         </div>
     )
 }

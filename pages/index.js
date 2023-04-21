@@ -17,12 +17,11 @@ export default function Home() {
         <nav className="pa2 flex justify-between bg-black bb b--white-10 ">
           <div className="flex items-center">
             <a href="/"><Image src={logo} alt="logo" width={40} heigth={40} /></a>
-            
             <p className="b roboto dn db-m db-l">FOTOGRAFOSDEPUERTORICO</p>
           </div>
           <div className="  pa2 flex justify-around ">
 
-            <a href="join" className="ba tc pa2 mr3 pointer flex items-center">EDITAR</a>
+            <a href="join" className="ba tc pa2 mr3 pointer flex items-center green">EDITAR</a>
             <a href="about" className="ba tc pa2 pinter flex items-center">NOSOTROS</a>
           </div>
         </nav>

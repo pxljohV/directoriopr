@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../Components/footer'
 import About from '../Components/about'
+import Link from 'next/link'
 
 import styles from '../styles/Home.module.css'
 import logo from '../Components/assets/logo.svg'
@@ -25,15 +26,15 @@ export default function join() {
           </div>
           <div className="  pa2 flex justify-around ">
 
-            <a href="join" className="ba tc pa2 mr3 pointer flex items-center ">EDITAR</a>
-            <a href="" className="ba tc pa2 pinter flex items-center ">NOSOTROS</a>
+            <a href="join" className="ba tc pa2 mr3 pointer flex items-center white-40">EDITAR</a>
+            <a href="" className="ba tc pa2 pinter flex items-center white">NOSOTROS</a>
           </div>
         </nav>
       </header>
 
       <main className="center tc mw7">
         <Join />
-
+        
       </main>
 
       <footer className={styles.footer}>
