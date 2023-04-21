@@ -22,7 +22,7 @@ export default function Home() {
           <div className="  pa2 flex justify-around ">
 
             <a href="join" className="ba tc pa2 mr3 pointer flex items-center green">EDITAR</a>
-            <a href="about" className="ba tc pa2 pinter flex items-center">NOSOTROS</a>
+            <a href="about" className="ba tc pa2 pinter flex items-center white">NOSOTROS</a>
           </div>
         </nav>
       </header>
