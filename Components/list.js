@@ -21,11 +21,11 @@ export default function List() {
     if (isLoading) return <p>Loading...</p>
     if (!data) return <p>No profile data</p>
     return (
-        <div className="center pa2">
+        <div className="center  bg-black ">
             {
                 data.map((i, index) => {
                     return (
-                        <div key={index} className="w-80-ns ba pa4-ns b--white-30 center mt3">
+                        <div key={index} className="w-100-ns  pa4-ns bt b--white-30 center mb3">
 
                             <div className=" pa  bg-white-10 ">
                                 <div className="bg-white " style={{ width: '160px', height: '160px' }}>
