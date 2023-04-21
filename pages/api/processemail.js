@@ -47,6 +47,6 @@ export default function handler(req, res) {
           .then(() => console.log("number updated"))
           .catch(e => console.log(e))
       }
-    }).then(res.status(200).send({ msg: 0 }))
+    }).then(setTimeout(()=>{res.status(200).send({ msg: 0 })},2000))
     .catch(e => console.log(e))
 }

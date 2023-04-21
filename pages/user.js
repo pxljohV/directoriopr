@@ -39,7 +39,5 @@ export default function User() {
     </div>
   )
 }
-export function getServerSideProps(){
-  
-}
+
 
