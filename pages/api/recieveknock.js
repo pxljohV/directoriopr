@@ -14,17 +14,17 @@ export default function recieveknock(req, res) {
     let response = { msg: 0 };
     db.select(process.env.KY).from(process.env.TA).where(process.env.KY, req.body.key)
         .then((r) => {
+            console.log(r)
+            console.log(req.body.key)
             if (r[0].keynum == req.body.key) {
                 //good
-                response.msg = 1;
-            } else {
-                response.msg = 0;
+                console.log("ok")
             }
-
         }).then(() => {
             console.log("knock resolved")
-            res.status(200).send(response.msg)
+            res.status(200).send({msg:0})
         }).catch((e) => {
             console.log(e)
+            res.status(200).send({msg:1})
         })
 }

@@ -14,11 +14,11 @@ export async function knock() {
         },
     }).catch((e) => console.log(e));
     const data = await res.json()
-    if (data.msg ===0) {
+    if (data.msg === 1) {
         Router.push("/")
         return false
     } else {
-        if (data.msg ===1){
+        if (data.msg === 0) {
             console.log("we good")
             return true
         }
