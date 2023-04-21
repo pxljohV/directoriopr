@@ -16,7 +16,8 @@ export default function Home() {
       <header>
         <nav className="pa2 flex justify-between bg-black bb b--white-10 ">
           <div className="flex items-center">
-            <Image src={logo} alt="logo" width={40} heigth={40} />
+            <a href="/"><Image src={logo} alt="logo" width={40} heigth={40} /></a>
+            
             <p className="b roboto dn db-m db-l">FOTOGRAFOSDEPUERTORICO</p>
           </div>
           <div className="  pa2 flex justify-around ">
@@ -36,7 +37,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <div className="pa1">
+        <div className="">
           <Footer />
         </div>
       </footer>

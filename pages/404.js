@@ -19,7 +19,7 @@ export default function lost() {
             <header>
                 <nav className="pa2 flex justify-between bg-black bb b--white-10 ">
                     <div className="flex items-center">
-                        <Image src={logo} alt="logo" width={40} heigth={40} />
+                    <a href="/"><Image src={logo} alt="logo" width={40} heigth={40} /></a>
                         <p className="b roboto dn db-m db-l">FOTOGRAFOSDEPUERTORICO</p>
                     </div>
                     <div className="  pa2 flex justify-around ">
