@@ -19,19 +19,27 @@ export default function UserEdit() {
     const [data, setData] = useState({})
     function handler(e) {
         e.preventDefault();
-        let data = {
-            name: inputName.current.value,
-            town: inputTown.current.value,
-            tel: inputTel.current.value,
-            desc: inputDesc.current.value,
-            key: localStorage.k,
-        }
-        console.log(data)
-        sender(data)
-            .then(inputButton.current.classList.add("bg-green"))
-            .then(setTimeout(() => { Router.push("/") }, 5000 / 60))
-    }
+        const telRegx = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+        if (inputTel.current.value.length < 12 && inputTel.current.value.length > 0) {
 
+            if (inputTel.current.value.length < 12) {
+                inputTel.current.classList.add("ba", "b--red")
+            }
+        } else {
+            if (telRegx.test(inputTel.current.value)) {
+                let data = {
+                    name: inputName.current.value,
+                    town: inputTown.current.value,
+                    tel: inputTel.current.value,
+                    desc: inputDesc.current.value,
+                    key: localStorage.k,
+                }
+                sender(data)
+                    .then(inputButton.current.classList.add("bg-green"))
+                    .then(setTimeout(() => { Router.push("/") }, 5000 / 60))
+            }
+        }
+    }
     return (
         <div className=" w-100 ">
             <Head>
@@ -52,7 +60,7 @@ export default function UserEdit() {
                 </nav>
             </header>
             <main className="">
-                <form action="POST" className="mw6 center bg-black pa4 ">
+                <form action="POST" className="mw6 center bg-black pa4">
                     <p className="mb5 f3  roboto b" >Panel del usuario:</p>
                     <p className="center tc f5 i white-60">*Solo llena la información que desees actualizar.</p>
                     <input type="text" placeholder="nombre" className="w-100 pa2" ref={inputName} />
@@ -138,8 +146,8 @@ export default function UserEdit() {
                         <option value="Yauco">Yauco</option>
 
                     </select>
-                    <input type="text" placeholder="telefono ej: 787-555-4444"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="w-100 mt2 pa2" ref={inputTel} maxLength="14"/>
-                    <textarea type="textarea" placeholder="descipción" className="w-100 mt3 h4" ref={inputDesc} />
+                    <input type="text" placeholder="telefono ej: 787-555-4444" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="w-100 mt2 pa2" ref={inputTel} maxLength="14" />
+                    <textarea type="textarea" placeholder="descipción" className="w-100 mt3 h4" ref={inputDesc} maxLength="300" />
                     <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" className="dn pa4 ba bb b--white-20 tc w-100 mt3" ref={inputImg} />
 
                     <input type="submit" value="guardar" className="w-100 mt2 pa2 bg-orange b mt5" onClick={handler} ref={inputButton} />
