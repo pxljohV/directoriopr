@@ -8,51 +8,55 @@ let inputEmail = React.createRef()
 let inputNum = React.createRef()
 
 async function handler(e) {
-   
+
     e.preventDefault()
-    // Send a fetch request to Backend API.
-    const res = await fetch(process.env.API_PR, {
-        method: "POST",
-        body: JSON.stringify(
-            {
-                email: inputEmail.current.value,
-            }
-        ),
-        headers: {
-            "content-type": "application/json",
-        },
-    }).catch((e) => console.log(e));
-    step1.current.classList.add("dn")
-    step2.current.classList.remove("dn")
+    if (step2.current.classList.contains("dn")) {
+        // Send a fetch request to Backend API.
+        const res = await fetch(process.env.API_PR, {
+            method: "POST",
+            body: JSON.stringify(
+                {
+                    email: inputEmail.current.value,
+                }
+            ),
+            headers: {
+                "content-type": "application/json",
+            },
+        }).catch((e) => console.log(e));
+        step1.current.classList.add("dn")
+        step2.current.classList.remove("dn")
+    }
+
 }
 async function handler2(e) {
     e.preventDefault()
     // Send a fetch request to Backend API.
-    const res = await fetch(process.env.API_CHECK, {
-        method: "POST",
-        body: JSON.stringify(
-            {
-                email: inputEmail.current.value,
-                num: inputNum.current.value
+  
+        const res = await fetch(process.env.API_CHECK, {
+            method: "POST",
+            body: JSON.stringify(
+                {
+                    email: inputEmail.current.value,
+                    num: inputNum.current.value
+                }
+            ),
+            headers: {
+                "content-type": "application/json",
+            },
+        }).catch((e) => console.log(e));
+        const data = await res.json()
+        console.log(await data.msg)
+        if (data.msg == "BAD") {
+            alert("Intentalo denuevo")
+            Router.reload("/")
+        } else {
+            if (data.msg == "GOOD") {
+                localStorage.k = data.k
+                Router.push('/user')
             }
-        ),
-        headers: {
-            "content-type": "application/json",
-        },
-    }).catch((e) => console.log(e));
-    const data = await res.json()
-    console.log(await data.msg)
-    if (data.msg == "BAD") {
-        alert("Intentalo denuevo")
-        Router.reload("/")
-    } else {
-        if (data.msg == "GOOD") {
-            localStorage.k = data.k
-            Router.push('/user')
         }
-    }
-    step1.current.classList.add("dn")
-    step2.current.classList.remove("dn")
+      
+
 }
 
 
@@ -75,7 +79,7 @@ export default function Join() {
                 </div>
                 <Link href="/" className="light-purple underline ma0 w-100 mt5">←regresar</Link>
             </form>
-            
+
         </div>
     )
 }
