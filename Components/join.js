@@ -80,13 +80,13 @@ export default function Join() {
                 <div className=" w-100 white" ref={step1}>
                     <p className="email center  mw5  pa2  tc white" id="email">¿Cual es tu correo electrónico?</p>
                     <div>
-                        <input type="email" name="email" placeholder="ejemplo@email.com" className="pa2 bg-white-10 b--black-20 ba " ref={inputEmail} required />
+                        <input type="email" name="email" placeholder="ejemplo@email.com" className="pa2 bg-white b--black-20 ba " ref={inputEmail} required />
                         <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow white" onClick={handler1} />
                     </div>
                 </div>
                 <div className=" w-100 dn" ref={step2} >
                     <p className="email tl pa2 tc yellow" id="num">Verifica to inbox.</p>
-                    <input type="text" name="num" placeholder="_ _ _ _ _ _" className="pa2 bg-white-10 b--black-20 " ref={inputNum} required />
+                    <input type="text" name="num" placeholder="_ _ _ _ _ _" className="pa2 bg-white b--black-20 " ref={inputNum} required />
                     <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow  white" onClick={handler2} required inputMode="numeric" />
 
                 </div>
