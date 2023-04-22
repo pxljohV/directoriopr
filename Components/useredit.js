@@ -42,7 +42,7 @@ export default function UserEdit() {
             <header>
                 <nav className="pa2 flex justify-between bg-black bb b--white-10 ">
                     <div className="flex items-center">
-                        <Image src={logo} alt="logo" width={40} heigth={40} />
+                        <a href="/"><Image src={logo} alt="logo" width={40} heigth={40} /></a>
                         <p className="b roboto dn db-m db-l">FOTOGRAFOSDEPUERTORICO</p>
                     </div>
                     <div className="  pa2 flex justify-around ">
@@ -138,7 +138,7 @@ export default function UserEdit() {
                         <option value="Yauco">Yauco</option>
 
                     </select>
-                    <input type="text" placeholder="telefono ej: 787-555-4444" className="w-100 mt2 pa2" ref={inputTel} maxLength="14" />
+                    <input type="text" placeholder="telefono ej: 787-555-4444"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="w-100 mt2 pa2" ref={inputTel} maxLength="14"/>
                     <textarea type="textarea" placeholder="descipción" className="w-100 mt3 h4" ref={inputDesc} />
                     <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" className="dn pa4 ba bb b--white-20 tc w-100 mt3" ref={inputImg} />
 
