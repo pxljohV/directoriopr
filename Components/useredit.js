@@ -26,7 +26,7 @@ export default function UserEdit() {
                 inputTel.current.classList.add("ba", "b--red", "bg-red")
             }
         } else {
-            if (telRegx.test(inputTel.current.value)) {
+            if (telRegx.test(inputTel.current.value) || inputTel.current.value.length < 1) {
                 let data = {
                     name: inputName.current.value,
                     town: inputTown.current.value,
