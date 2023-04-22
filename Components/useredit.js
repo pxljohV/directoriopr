@@ -46,8 +46,8 @@ export default function UserEdit() {
                         <p className="b roboto dn db-m db-l">FOTOGRAFOSDEPUERTORICO</p>
                     </div>
                     <div className="  pa2 flex justify-around ">
-                        <a href="join" className="ba tc pa2 mr3 pointer flex items-center red">EDITAR</a>
-                        <a href="about" className="ba tc pa2 pinter flex items-center">NOSOTROS</a>
+                        <a href="join" className="ba tc pa2 mr3 pointer flex items-center white-50">EDITAR</a>
+                        <a href="about" className="ba tc pa2 pinter flex items-center white">NOSOTROS</a>
                     </div>
                 </nav>
             </header>
