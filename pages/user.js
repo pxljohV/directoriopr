@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import tachyons from 'tachyons'
-import Lost from '../Components/lost'
+import Loading from '../Components/loading'
 import UserEdit from '../Components/useredit'
 import { useEffect, useState } from 'react'
 import { knock } from '../Components/knock'
@@ -26,16 +26,21 @@ export default function User() {
 
   useEffect(
     () => {
-      setLoad(knock())
+      const r = knock()
+      .then((r)=>{setLoad(r);
+      console.log(r)
+    })
+    
     }, [])
 
   if (load) {
     return ok()
   }
+  
 
   return (
     <div className="flex justify-center w-100">
-      <Lost />
+      <Loading />
     </div>
   )
 }

@@ -1,14 +1,12 @@
 import React from "react";
 import Router from 'next/router'
 import Link from 'next/link'
-
+import { useEffect } from "react";
 let step1 = React.createRef()
 let step2 = React.createRef()
 let inputEmail = React.createRef()
 let inputNum = React.createRef()
-
 async function handler1(e) {
-
     e.preventDefault()
     // Send a fetch request to Backend API.
     const res = await fetch(process.env.API_PR, {
@@ -51,31 +49,36 @@ async function handler2(e) {
             Router.push('/user')
         }
     }
-
 }
 
 
 export default function Join() {
+    useEffect(() => {
+        document.addEventListener("keydown", (e) => {
+            if (e.code == "Enter") {
+                e.preventDefault();
+                console.log("pressed enter")
+            }
+        });
+    }, [])
     return (
         <div className="vh-75 w-100 flex items-center flex-wrap" >
             <form id="form" className=" flex w-100 flex-wrap" >
-                <div className=" w-100 "ref={step1}>
-                    <p className="email center  mw5  pa2  tc" id="email">¿Cual es tu correo electrónico?</p>
+                <div className=" w-100 " ref={step1}>
+                    <p className="email center  mw5  pa2  tc white" id="email">¿Cual es tu correo electrónico?</p>
                     <div>
                         <input type="text" name="email" placeholder="ejemplo@email.com" className="pa2 bg-white-10 b--black-20 ba " ref={inputEmail} />
                         <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler1} />
                     </div>
                 </div>
-            </form>
-            <form id="form" className=" flex w-100 flex-wrap" >
                 <div className=" w-100 dn" ref={step2} >
                     <p className="email tl pa2 tc yellow" id="email">Verifica to inbox.</p>
                     <input type="text" name="email" placeholder="_ _ _ _ _ _" className="pa2 bg-white-10 b--black-20 " ref={inputNum} />
                     <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler2} />
-                </div>
-            </form >
-            <Link href="/" className="light-purple underline ma0 w-100 mt5">←regresar</Link>
 
+                </div>
+                <Link href="/" className="light-purple underline ma0 w-100 mt5">←regresar</Link>
+            </form >
 
         </div >
     )
