@@ -147,7 +147,7 @@ export default function UserEdit() {
 
                     </select>
                     <input type="text" placeholder="telefono ej: 787-555-4444" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="w-100 mt2 pa2" ref={inputTel} maxLength="14" />
-                    <textarea type="textarea" placeholder="descipción" className="w-100 mt3 h4" ref={inputDesc} maxLength="300" />
+                    <textarea type="textarea" placeholder="descipción" className="w-100 mt3 h4" ref={inputDesc} maxLength="400" />
                     <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" className="dn pa4 ba bb b--white-20 tc w-100 mt3" ref={inputImg} />
 
                     <input type="submit" value="guardar" className="w-100 mt2 pa2 bg-orange b mt5" onClick={handler} ref={inputButton} />
