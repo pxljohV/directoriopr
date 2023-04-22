@@ -23,7 +23,7 @@ export default function UserEdit() {
         if (inputTel.current.value.length < 12 && inputTel.current.value.length > 0) {
 
             if (inputTel.current.value.length < 12) {
-                inputTel.current.classList.add("ba", "b--red")
+                inputTel.current.classList.add("ba", "b--red", "bg-red")
             }
         } else {
             if (telRegx.test(inputTel.current.value)) {
