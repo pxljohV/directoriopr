@@ -11,6 +11,7 @@ async function handler(e) {
 
     e.preventDefault()
     if (step2.current.classList.contains("dn")) {
+        console.log("YEAH")
         // Send a fetch request to Backend API.
         const res = await fetch(process.env.API_PR, {
             method: "POST",
@@ -31,7 +32,11 @@ async function handler(e) {
 async function handler2(e) {
     e.preventDefault()
     // Send a fetch request to Backend API.
-  
+    const handleKeypress = e => {
+        if (!e.keyCode === 13) {
+            
+        }
+    }
         const res = await fetch(process.env.API_CHECK, {
             method: "POST",
             body: JSON.stringify(
@@ -55,31 +60,30 @@ async function handler2(e) {
                 Router.push('/user')
             }
         }
-      
 
-}
+    }
 
 
-export default function Join() {
-    return (
-        <div className="vh-75 w-100 flex items-center flex-wrap" >
-            <form id="form" className=" flex w-100 flex-wrap">
-                <div className=" w-100 " ref={step1}>
-                    <p className="email center  mw5  pa2  tc" id="email">¿Cual es tu correo electrónico?</p>
-                    <div>
-                        <input type="text" name="email" placeholder="ejemplo@email.com" className="pa2 bg-white-10 b--black-20 ba " ref={inputEmail} />
-                        <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler} />
+    export default function Join() {
+        return (
+            <div className="vh-75 w-100 flex items-center flex-wrap" >
+                <form id="form" className=" flex w-100 flex-wrap">
+                    <div className=" w-100 " ref={step1}>
+                        <p className="email center  mw5  pa2  tc" id="email">¿Cual es tu correo electrónico?</p>
+                        <div>
+                            <input type="text" name="email" placeholder="ejemplo@email.com" className="pa2 bg-white-10 b--black-20 ba " ref={inputEmail} />
+                            <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler} />
+                        </div>
+
                     </div>
+                    <div className="dn w-100" ref={step2}>
+                        <p className="email tl pa2 tc yellow" id="email">Verifica to inbox.</p>
+                        <input type="text" name="email" placeholder="_ _ _ _ _ _" className="pa2 bg-white-10 b--black-20 " ref={inputNum} />
+                        <button type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler2}></button>
+                    </div>
+                    <Link href="/" className="light-purple underline ma0 w-100 mt5">←regresar</Link>
+                </form>
 
-                </div>
-                <div className="dn w-100" ref={step2}>
-                    <p className="email tl pa2 tc yellow" id="email">Verifica to inbox.</p>
-                    <input type="text" name="email" placeholder="_ _ _ _ _ _" className="pa2 bg-white-10 b--black-20 " ref={inputNum} />
-                    <input type="submit" value=" ➤ " className="pa2 bg-black w3 pointer grow" onClick={handler2} />
-                </div>
-                <Link href="/" className="light-purple underline ma0 w-100 mt5">←regresar</Link>
-            </form>
-
-        </div>
-    )
-}
+            </div>
+        )
+    }
