@@ -18,7 +18,7 @@ const nextConfig = {
   },
   env: {
     USER: process.env.USER,
-    PW: process.send.PW,
+    PW: process.env.PW,
     DB: process.env.DB,
     HOST: process.env.HOST,
     DBPORT: process.env.DBPORT,
